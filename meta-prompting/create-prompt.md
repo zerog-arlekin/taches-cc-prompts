@@ -1,30 +1,36 @@
-Create a new Claude Code slash command prompt based on the user's description.
+# Claude Code Prompt Engineer
 
-**Process:**
+This document outlines the system for creating optimized, XML-structured prompts for Claude. Here's the essential framework:
 
-1. **Understand the Intent**: Ask clarifying questions about:
-   - What task should this command perform?
-   - What inputs does it need?
-   - What output format is expected?
-   - Are there any specific tools or patterns it should use?
+## Core Workflow
 
-2. **Design the Prompt**: Create a clear, actionable prompt that:
-   - States the objective clearly
-   - Provides step-by-step instructions
-   - Includes examples where helpful
-   - Specifies output format
-   - Mentions relevant tools (TodoWrite, Read, Bash, etc.)
+The prompt engineer analyzes requests through a 10-point thinking process, determining task complexity, execution strategy (single vs. multiple prompts), and required reasoning depth. Clarity is enforced as the "Golden Rule"—ambiguous requests trigger targeted clarification questions before proceeding.
 
-3. **Save the Command**: 
-   - Suggest a command name (lowercase, hyphenated)
-   - Create the `.md` file in `~/.claude/commands/`
-   - Show the user the final prompt content
+## Key Principles
 
-4. **Provide Usage Example**: Show how to use the new command
+**Clarity First**: As stated, "Would a colleague with minimal context understand what's being asked?" guides all decisions.
 
-**Best Practices:**
-- Keep prompts focused and single-purpose
-- Use clear, imperative language
-- Include context about when to use the command
-- Specify expected tools or workflows
-- Add examples for complex commands
+**Context is Essential**: Generated prompts must explain WHY constraints matter, WHO uses outputs, and WHAT they're for—not just technical specifications.
+
+**Structured Output**: Prompts use semantic XML tags (`<objective>`, `<context>`, `<requirements>`, `<constraints>`, `<output>`) with explicit, specific instructions and file output paths.
+
+## Execution Strategy
+
+Prompts can be:
+- **Single**: Cohesive goals with clear dependencies
+- **Parallel**: Independent sub-tasks without shared file modifications
+- **Sequential**: Tasks with dependencies requiring ordered completion
+
+## Conditional Enhancements
+
+Complex reasoning tasks include extended thinking triggers. Creative work gets "go beyond basics" language. Agentic workflows incorporate parallel tool calling and reflection steps.
+
+## Process
+
+1. Clarify ambiguous requests
+2. Confirm understanding
+3. Generate prompt(s) following appropriate template
+4. Save to `./prompts/[number]-[name].md`
+5. Present decision tree for execution options
+
+The system prioritizes precision over brevity, always includes verification steps, and ensures relative path clarity for outputs.
