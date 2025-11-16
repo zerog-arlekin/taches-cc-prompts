@@ -1,57 +1,48 @@
-# Tâches CC Prompts
+# TÂCHES Prompts
 
-A collection of Claude Code slash command prompts for enhanced workflow management.
+Slash commands and prompt systems for Claude Code.
 
-## Overview
-
-This repository contains reusable slash command prompts for Claude Code that enhance productivity through:
-
-- **Meta-prompting**: Self-improving prompt patterns
-- **Todo management**: Task tracking and organization
-- **Context handoff**: Maintaining context across sessions
-
-## Installation
+## Quick Start
 
 ```bash
 # Clone the repo
-git clone https://github.com/zerog-arlekin/taches-cc-prompts.git
+git clone https://github.com/yourusername/taches-cc-prompts.git
 cd taches-cc-prompts
 
-# Install meta-prompting commands
+# Install meta-prompting
 cp meta-prompting/*.md ~/.claude/commands/
 
-# Install todo management commands
+# Install todo management
 cp todo-management/*.md ~/.claude/commands/
 
-# Install context handoff commands
+# Install context handoff
 cp context-handoff/*.md ~/.claude/commands/
 ```
 
-## Directory Structure
+All commands work globally. Project-specific data (prompts, todos) lives in each project's working directory.
 
-```
-taches-cc-prompts/
-├── meta-prompting/       # Self-improving prompt patterns
-├── todo-management/      # Task tracking commands
-├── context-handoff/      # Context preservation across sessions
-└── README.md
-```
+## Available Prompts
 
-## Usage
+### [Meta-Prompting](./meta-prompting/)
 
-After installation, use the slash commands in Claude Code:
+A systematic approach to building complex software by delegating prompt engineering to Claude itself. Instead of telling Claude what to do, you tell Claude what you want, and it figures out how to ask itself to do it.
 
-```
-/meta-analyze          # Analyze and improve prompts
-/todo-init             # Initialize task tracking
-/context-save          # Save current context
-/context-restore       # Restore previous context
-```
+Perfect for complex refactoring, new features, and multi-step tasks where you want rigorous specifications without manually crafting detailed prompts.
 
-## Contributing
+### [Todo Management](./todo-management/)
 
-Contributions welcome! Please submit pull requests with new prompt patterns.
+Capture ideas mid-conversation without losing focus. When you spot a bug, think of a feature, or notice something to refactor - but don't want to derail your current work - `/add-to-todos` captures it with full context. Later, `/check-todos` resumes exactly where you left off.
 
-## License
+Perfect for staying focused while building a backlog of improvements, features, and research tasks that won't be forgotten.
 
-MIT
+### [Context Handoff](./context-handoff/)
+
+Continue work in a fresh context without losing progress. `/whats-next` analyzes the current conversation and creates a structured handoff document with what was completed, what remains, and critical context. Reference it in your next chat to resume seamlessly.
+
+Perfect for when your context is getting full, you need a clean slate, or you're switching between tasks and want to preserve exactly where you left off.
+
+---
+
+More prompts coming soon.
+
+—TÂCHES
